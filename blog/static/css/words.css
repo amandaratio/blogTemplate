@@ -1,0 +1,47 @@
+.article{
+  width: 100%;
+}
+.right-col{
+  width: 100%;
+}
+.para-btn {
+  width: 100%;
+  text-align: center;
+}
+.btn-p{
+  background: inherit;
+  border: none;
+  margin: 0 auto;
+  color: #6668a8;
+}
+.prev{
+  width: 90%;
+  margin: auto;
+  text-align: justify;
+}
+.full{
+  display: none;
+  width: 90%;
+  margin: auto;
+  text-align: justify;
+}
+h1{
+  font-weight: bold;
+  font-size: 20px;
+}
+.author {
+  font-style: italic;
+  font-weight: lighter;
+  text-indent: 1%;
+}
+.time-stamp {
+  font-style: italic;
+  font-weight: lighter;
+  text-indent: 1%;
+}
+
+@media only screen and (max-width: 450px){
+  p {
+    font-size: 15px !important;
+  }
+}

@@ -1,0 +1,73 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Archivo|Open+Sans" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="{% static 'css/ani.css' %}">
+        <link rel="stylesheet" href="{% static 'css/words.css' %}">
+    </head>
+    <title>Amanda Horacio | I haven't the foggiest </title>
+
+    <div id="page">
+
+        <nav class="nav">
+            <ul class="title-area"><!-- float this left -->
+                <li><a href="#">AmandaRatio</a></li>
+            </ul>
+            <ul class="nav-items"><!-- float this right-->
+                <li><a class="navA" href="#">Works</a></li>
+                <li><a class="navA" href="#">Contact</a></li>
+            </ul>
+        </nav>
+
+        <nav class="nav-long">
+            <ul class="title-area"><!-- float this left -->
+                <li><a href="#">AmandaRatio</a></li>
+            </ul>
+            <ul class="nav-items"><!-- float this right-->
+                <li><a class="navA" href="#">Words</a></li>
+                <li><a class="navA" href="#">Projects</a></li>
+                <li><a class="navA" href="#">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div id="content">
+            <div class="right-col" width="100%">
+                <div class="col-text">
+                    <h1 class="col-header">Amanda Wrote</h1>
+                    <p></p>
+                    {% for article in words %}
+                    <div class="article">
+                        <h1><a href="{{article.get_url}}">{{ article.title }}</a></h1>
+                        <p class="author"> Written by <a href="#">{{ article.author }}</a>&nbsp;&nbsp;</p>
+                        <div class="time-stamp"><p> Published: {{ article.published }}</p></div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div id="footer">
+                <div id="logo-wrapper">
+                    <a target="_blank" href="index">
+                        <img id="logo" src="files/pixels/sig.png">
+                            <div id="name"></div>
+                            </a>
+                </div>
+                <div class="share">
+                    <div></div>
+                    <a href="https://twitter.com/amandahoratio?lang=en">
+                        <i class="fa fa-twitter fa-2x hvr-pop" data-toggle="tooltip" title="Twitter"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/amandahoracio/">
+                        <i class="fa fa-linkedin fa-2x hvr-pop" data-toggle="tooltip" data-placement="bottom" title="LinkedIn"></i>
+                    </a>
+                    <a href="https://github.com/amandaratio" target="_blank">
+                        <i class="fa fa-github fa-2x hvr-pop" data-toggle="tooltip" data-placement="bottom" title="GitHub"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+</html>

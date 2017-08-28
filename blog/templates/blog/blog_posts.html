@@ -41,7 +41,7 @@
                     <p></p>
                     {% for article in words %}
                     <div class="article">
-                        <h1><a href="{{article.get_url}}">{{ article.title }}</a></h1>
+                        <h1><a href="{% url 'post-view' article.id %}">{{ article.title }}</a></h1>
                         <p class="author"> Written by <a href="#">{{ article.author }}</a>&nbsp;&nbsp;</p>
                         <div class="time-stamp"><p> Published: {{ article.published }}</p></div>
                     </div>

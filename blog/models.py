@@ -23,5 +23,6 @@ class Article(models.Model):
         self.save()
     def __str__(self):
         return self.title
-    def get_url(self):
-        return '/posts/'+ self.title
+    
+
+

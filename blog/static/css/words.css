@@ -40,6 +40,17 @@ h1{
   text-indent: 1%;
 }
 
+.views {
+  border: 1px solid white;
+  width: 100%;
+  height: 20px;
+}
+.next{
+  float:left;
+}
+.prev{
+  float: right;
+}
 @media only screen and (max-width: 450px){
   p {
     font-size: 15px !important;

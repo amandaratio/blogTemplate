@@ -4,11 +4,12 @@
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-            <link href="https://fonts.googleapis.com/css?family=Archivo|Open+Sans" rel="stylesheet">
-                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-                    <link rel="stylesheet" href="{% static 'css/ani.css' %}">
-                        <link rel="stylesheet" href="{% static 'css/words.css' %}">
-                            </head>
+        <link href="https://fonts.googleapis.com/css?family=Archivo|Open+Sans" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="{% static 'css/ani.css' %}">
+        <link rel="stylesheet" href="{% static 'css/words.css' %}">
+        <script type="text/javascript" src="{% static 'js/view.js' %}"></script>
+    </head>
     <title>Amanda Horacio | I haven't the foggiest </title>
     
     <div id="page">
@@ -44,9 +45,17 @@
                         <h1></h1>
                         <p class="author"> Written by <a href="#">{{ post.author }}</a>&nbsp;&nbsp;</p>
                         <div class="time-stamp"><p> Published: {{ post.published }}</p></div>
-                        <p>{{ post.content }}</p>
+                        <p>{{ post.content|linebreaks }}</p>
                     </div>
                     
+                </div>
+                <div class="views">
+                    <div class="next">
+                        <a href="" id="next-a"></a>
+                    </div>
+                    <div class="prev">
+                        <a href="" id="prev-a"></a>
+                    </div>
                 </div>
             </div>
             

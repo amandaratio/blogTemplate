@@ -8,7 +8,13 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="{% static 'css/ani.css' %}">
         <link rel="stylesheet" href="{% static 'css/words.css' %}">
-        <script type="text/javascript" src="{% static 'js/view.js' %}"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script type="text/javascript" src="{% static 'js/views.js' %}"></script>
+        <script type="text/javascript">
+            var n = "{{ post.next }}";
+            var p = "{{ post.prev }}";
+        </script>
+        
     </head>
     <title>Amanda Horacio | I haven't the foggiest </title>
     
@@ -49,12 +55,13 @@
                     </div>
                     
                 </div>
+                
                 <div class="views">
                     <div class="next">
-                        <a href="" id="next-a"></a>
+                        <a href="{% url 'next-view' post.next_id %}" id="next-a"></a>
                     </div>
                     <div class="prev">
-                        <a href="" id="prev-a"></a>
+                        <a href="{% url 'prev-view' post.prev_id %}" id="prev-a"></a>
                     </div>
                 </div>
             </div>
@@ -80,4 +87,6 @@
                 </div>
             </div>
         </div>
+        
+        
 </html>

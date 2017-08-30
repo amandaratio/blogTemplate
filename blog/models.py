@@ -33,6 +33,16 @@ class Article(models.Model):
             return 't'
         else:
             return 'f'
-    
+    def next_id(self):
+        if(self.id<2):
+            return self.id+1
+        else:
+            return self.id
+    def prev_id(self):
+        if(self.id>1):
+            return self.id-1
+        else:
+            return self.id
+
 
 

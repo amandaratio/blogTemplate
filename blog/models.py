@@ -24,7 +24,7 @@ class Article(models.Model):
     def __str__(self):
         return self.title
     def next(self):
-        if(self.id<2):
+        if(self.id<Article.objects.count()):
             return 't'
         else:
             return 'f'
@@ -34,7 +34,7 @@ class Article(models.Model):
         else:
             return 'f'
     def next_id(self):
-        if(self.id<2):
+        if(self.id<Article.objects.count()):
             return self.id+1
         else:
             return self.id

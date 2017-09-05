@@ -23,6 +23,26 @@ class Article(models.Model):
         self.save()
     def __str__(self):
         return self.title
-    
+    def next(self):
+        if(self.id<Article.objects.count()):
+            return 't'
+        else:
+            return 'f'
+    def prev(self):
+        if(self.id>1):
+            return 't'
+        else:
+            return 'f'
+    def next_id(self):
+        if(self.id<Article.objects.count()):
+            return self.id+1
+        else:
+            return self.id
+    def prev_id(self):
+        if(self.id>1):
+            return self.id-1
+        else:
+            return self.id
+
 
 

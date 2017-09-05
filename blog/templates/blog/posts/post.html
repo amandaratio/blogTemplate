@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="{% static 'css/words.css' %}">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script type="text/javascript" src="{% static 'js/views.js' %}"></script>
+        
         <script type="text/javascript">
             var n = "{{ post.next }}";
             var p = "{{ post.prev }}";
@@ -48,20 +49,20 @@
                     <p></p>
                     
                     <div class="article">
-                        <h1></h1>
+                        <h1>{{ post.title }}</h1>
                         <p class="author"> Written by <a href="#">{{ post.author }}</a>&nbsp;&nbsp;</p>
                         <div class="time-stamp"><p> Published: {{ post.published }}</p></div>
-                        <p>{{ post.content|linebreaks }}</p>
+                        <div class="words"><p>{{ post.content|safe }}</p></div>
                     </div>
                     
                 </div>
                 
                 <div class="views">
                     <div class="next">
-                        <a href="{% url 'next-view' post.next_id %}" id="next-a"></a>
+                        <a href="{% url 'prev-view' post.prev_id %}" id="prev-a"></a>
                     </div>
                     <div class="prev">
-                        <a href="{% url 'prev-view' post.prev_id %}" id="prev-a"></a>
+                        <a href="{% url 'next-view' post.next_id %}" id="next-a"></a>
                     </div>
                 </div>
             </div>
